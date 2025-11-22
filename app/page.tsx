@@ -13,6 +13,9 @@ import styles from './page.module.css';
 export default async function HomePage() {
   // Fetch products on the server (SSR)
   const products: Product[] = await fetchProducts();
+export default async function ProductsPage() {
+  const res = await fetch("https://fakestoreapi.com/products", { cache: "no-store" });
+  const products = await res.json();
 
   return (
     <>
@@ -26,6 +29,9 @@ export default async function HomePage() {
               Find the perfect items that match your style and needs.
             </p>
           </div>
+          <div>
+      {/* Render products */}
+    </div>
           
           <div className={styles.layout}>
             <ProductPageClient initialProducts={products} />
@@ -35,5 +41,6 @@ export default async function HomePage() {
       <Footer />
     </>
   );
+}
 }
 

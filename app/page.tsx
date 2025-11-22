@@ -1,3 +1,5 @@
+export const dynamic = "force-dynamic";
+
 import { fetchProducts } from '@/lib/api';
 import { Product, FilterState } from '@/types/product';
 import Header from '@/components/Header';
